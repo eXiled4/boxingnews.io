@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 #CLI Controller
 class BoxingNews::CLI
 
@@ -50,7 +50,7 @@ class BoxingNews::CLI
     def goodbye
         puts "\nSee you tomorrow for more news!"
     end
-    binding.pry
+    #binding.pry
 end
 
 #ruby lib/BoxingNews/cli.rb
