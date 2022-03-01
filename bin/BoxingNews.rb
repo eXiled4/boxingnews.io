@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "BoxingNews"
+
+
+BoxingNews::CLI.new.call
+
+#ruby bin/BoxingNews.rb
