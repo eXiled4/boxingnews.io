@@ -54,9 +54,9 @@ class BoxingNews::Scraper
             #<span class="contentMeta__timestamp">3d</span>
             #<span class="contentMeta__author">Mike Coppinger and Nick Parkinson</span></div>
 
-                                                    #<section class="contentItem__content contentItem__content--story has-image has-video contentItem__content--collection"><a name="&amp;lpos=boxing:feed:1:story" data-id="33378996" href="/boxing/story/_/id/33378996/josh-taylor-wins-fails-shine-now-future-140-pound-division""
+                                                    #<section class="contentItem__content contentItem__content--story has-image has-video contentItem__content--collection"><a " href="
         end
-
+        #binding.pry
     end
 
 
