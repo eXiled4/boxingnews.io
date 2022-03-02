@@ -1,5 +1,5 @@
 class BoxingNews::Stories
-    attr_accessor :title, :description, :topic, :author, :timestamp, :url
+    attr_accessor :title, :description, :author, :timestamp, :url
 
     @@all = []
 

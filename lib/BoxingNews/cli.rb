@@ -25,7 +25,6 @@ class BoxingNews::CLI
             if input.to_i > 0 && input.to_i < 3
                 the_story = @stories[input.to_i-1]
                 puts "\n\t'#{the_story.title}' by #{the_story.author} - #{the_story.timestamp}"
-                puts "\n\t#{the_story.topic.capitalize!}" if the_story.topic != nil
                 puts "\n\t#{the_story.description.capitalize!}" if the_story.description != nil
                 if the_story.url 
                     doc = Nokogiri::HTML(open("#{the_story.url}"))
