@@ -1,6 +1,6 @@
 #require 'pry'
 #CLI Controller
-class BoxingNews::CLI
+class BoxingNews::CLI 
 
     def call
         BoxingNews::Scraper.scrape_stories
@@ -10,7 +10,7 @@ class BoxingNews::CLI
 
     def list_stories
         puts "\nLatest Stories:"
-        @stories = BoxingNews::Stories.today
+        @stories = BoxingNews::Stories.all
         @stories.each.with_index(1) do |story, x|
             puts "#{x}. '#{story.title}' by #{story.author} - #{story.timestamp}"
         end
@@ -18,7 +18,7 @@ class BoxingNews::CLI
 
     def list
         input = nil
-        while input != "end"
+        while input != "exit"
             puts "\nEnter the number of the article you would like to see, type list to see the list again, or type exit to leave."
             input = gets.strip.downcase
 
@@ -39,7 +39,7 @@ class BoxingNews::CLI
                 end
             elsif input == 'list'
                 list_stories
-            elsif input == 'end'
+            elsif input == 'exit'
                 goodbye
             else
                 puts "\nSorry, please try again."
