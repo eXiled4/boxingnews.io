@@ -28,7 +28,8 @@ class BoxingNews::CLI
                 puts "\n\t#{the_story.description.capitalize!}" if the_story.description != nil
                 if the_story.url 
                     doc = Nokogiri::HTML(open("#{the_story.url}"))
-                    story = doc.search("div.article-body p").text
+                    story = doc.css("div.article-body p").text
+                    #<div class="article-body" style="min-height: 301px;"> multiple <p> - with all content
                     puts "\n"
                     puts story
                     puts "\n" 
@@ -53,3 +54,4 @@ class BoxingNews::CLI
 end
 
 #ruby lib/BoxingNews/cli.rb
+#ruby bin/BoxingNews
