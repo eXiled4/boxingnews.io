@@ -23,7 +23,7 @@ class BoxingNews::CLI
             puts "\nEnter the number of the article you would like to see, type list to see the list again, or type exit to leave."
             input = gets.strip.downcase
 
-            if input.to_i > 0 && input.to_i < 3
+            if input.to_i > 0 && input.to_i < 4
                 the_story = @stories[input.to_i-1]
                 puts "\n#{the_story.title} by #{the_story.author} - #{the_story.timestamp}"
                 puts "\n#{the_story.description}" if the_story.description != nil

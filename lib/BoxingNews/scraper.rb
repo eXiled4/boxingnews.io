@@ -5,6 +5,7 @@ class BoxingNews::Scraper
         def self.scrape_stories
         self.scrape_espn_headline
         self.scrape_next_espn_story
+        self.scrape_another_espn_story
         # go to espn, find the defined porperties, instantiate stories
         end
 
@@ -57,6 +58,24 @@ class BoxingNews::Scraper
                                                     #<section class="contentItem__content contentItem__content--story has-image has-video contentItem__content--collection"><a " href="
         end
         #binding.pry
+
+        #bin/BoxingNews
+
+        def self.scrape_another_espn_story
+            # 1
+             story = BoxingNews::Stories.new
+    
+            story.title = @doc.css("h1.contentItem__title.contentItem__title--story")[2].text
+            story.description = "Visit ESPN's Boxing Homepage for more information! \nhttps://www.espn.com.au/boxing/" if @description == nil
+            story.description = @doc.css("p.contentItem__subhead.contentItem__subhead--story")[2].text
+            story.author = "ESPN" if @author == nil
+            story.author = @doc.css("span.contentMeta__author")[2].text
+            story.timestamp = "About a week ago.." if @timestamp == nil
+            story.timestamp = @doc.css("span.contentMeta__timestamp")[2].text
+            story.url = "Visit ESPN's Boxing Homepage for more information! \nhttps://www.espn.com.au/boxing/" if @url == nil
+            story.url = "https://espn.com" + @doc.css("section.contentItem__content.contentItem__content--story.has-image.has-video.contentItem__content--collection a[href]")[1]['href']
+           # binding.pry
+            end
     end
 
 
