@@ -24,7 +24,7 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
-Once installed successfully with the above instructions, enter bin/BoxingNews to run the program
+Once installed successfully with the above instructions, enter `bin/BoxingNews` to run the program
 
 ## Development
 
