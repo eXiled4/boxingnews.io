@@ -12,7 +12,7 @@ class BoxingNews::Scraper
         # 1
          story = BoxingNews::Stories.new
 
-        story.title = @doc.css("div.contentItem__titleWrapper h1").first.text
+        story.title = @doc.css("section.headlineStack__listContainer li").first.text
         story.description = "Visit ESPN's Boxing Homepage for more information! \nhttps://www.espn.com.au/boxing/" if @description == nil
         story.description = @doc.css("div.contentItem__titleWrapper p").first.text
         story.author = "ESPN" if @author == nil
